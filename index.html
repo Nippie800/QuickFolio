@@ -1,68 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfolio Builder</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Builder</title>
 </head>
 <body>
-    <h1>Portfolio Builder</h1>
 
-    <form id="portfolioForm">
-        <input id="name" placeholder="Fullname" required><br>
-        <input id="bio" placeholder="Insert a short bio" required><br>
-        <input id="skill1" placeholder="Skill 1" required><br>
-        <input id="skill2" placeholder="Skill 2" required><br>
-        <input id="email" type="email" placeholder="Email" required><br>
-        <input id="phone" type="tel" placeholder="Phone Number" required><br>
+  <h1>🎨 Quickfolio - Portfolio Builder</h1>
 
-        <label for="templateSelcet">Choose a template:</label>
-        <select id="templateSelect">
-            <option value="template1">Minimal</option>
-            <option value="template2">Creative</option>
-            <option value="template3">Professional</option>
-        </select><br><br>
+  <!-- 🔧 Form Section -->
+  <form id="portfolioForm">
+    <input id="name" placeholder="Fullname" required><br>
+    <input id="bio" placeholder="Insert a short bio" required><br>
+    <input id="skill1" placeholder="Skill 1" required><br>
+    <input id="skill2" placeholder="Skill 2" required><br>
+    <input id="email" type="email" placeholder="Email" required><br>
+    <input id="phone" type="tel" placeholder="Phone Number" required><br>
 
-        <button type="button" id="loadBtn">Preview Portfolio</button>
-        <button type="button" id="exportBtn">Export as HTML</button>
-    </form>
+    <button type="button" id="loadBtn">Preview Portfolio</button>
+    <button type="button" id="exportBtn">Export as HTML</button>
+  </form>
 
-    <hr>
-
-    <h2>Preview:</h2>
-    <div id="preview"></div>
-
-    <script src="js/main.js"></script>
-    <script src="js/formHandler.js"></script>
-    <script src="js/previewHandler.js"></script>
-    <script src="js/exporter.js"></script>
-
-</body>
-
-<body>
-
-  <h1>🎨 Quickfolio - Pick a Template</h1>
+  <hr>
 
   <!-- 🔻 TEMPLATE LAUNCHER DROPDOWN -->
   <label for="templatePicker">Choose a template:</label>
-  <select id="templatePicker">
+  <select id="templatePicker" title="Choose a template">
     <option value="template1.html">Minimalist</option>
     <option value="template2.html">Creative</option>
     <option value="template3.html">Professional</option>
   </select>
 
   <!-- 🔍 TEMPLATE PREVIEW -->
+  <h2>Preview:</h2>
   <div id="preview">Loading preview...</div>
 
   <!-- 🧠 SCRIPT LINKS -->
   <script src="js/main.js"></script>
+  <script src="js/formHandler.js"></script>
+  <script src="js/previewHandler.js"></script>
+  <script src="js/exporter.js"></script>
   <script>
+    // Handle template switching
     document.getElementById('templatePicker').addEventListener('change', function() {
-      loadTemplate(this.value); // Call the function from your JS file
+      loadTemplate(this.value); // Call the function from your JS
     });
 
-    // Load default template on page load
-    loadTemplate('template1.html');
+    // Load a default template on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      loadTemplate('template1.html');
+    });
   </script>
-</body>
 
+</body>
 </html>

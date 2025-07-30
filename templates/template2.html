@@ -3,19 +3,67 @@
 <head>
   <title>Portfolio of {{name}}</title>
   <style>
-    body { font-family: 'Courier New', monospace; background: #fef6e4; color: #001858; padding: 30px; }
-    .header { background: #f582ae; padding: 20px; border-radius: 8px; }
-    .projects { margin-top: 20px; background: #f3d2c1; padding: 15px; border-radius: 8px; }
+    body {
+      font-family: 'Courier New', monospace;
+      background: #fef6e4;
+      color: #001858;
+      padding: 30px;
+    }
+
+    .header {
+      background: #f582ae;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .contact {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .skills {
+      margin-top: 20px;
+      background: #8bd3dd;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .projects {
+      margin-top: 20px;
+      background: #f3d2c1;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
+
   <div class="header">
     <h1>{{name}}</h1>
     <p>{{bio}}</p>
+    <div class="contact">
+      📧 {{email}}<br>
+      📞 {{phone}}
+    </div>
   </div>
+
+  <div class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>{{skill1}}</li>
+      <li>{{skill2}}</li>
+    </ul>
+  </div>
+
   <div class="projects">
     <h2>My Work</h2>
     {{projects}}
   </div>
+
 </body>
 </html>

@@ -3,16 +3,51 @@
 <head>
   <title>{{name}} - Portfolio</title>
   <style>
-    body { font-family: Arial; padding: 20px; background: #ffffff; color: #333; }
-    h1 { border-bottom: 1px solid #ccc; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #ffffff;
+      color: #333;
+    }
+
+    h1 {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .label {
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
+
   <h1>{{name}}</h1>
   <p>{{bio}}</p>
-  <h2>Projects</h2>
-  <div id="projects">
-    {{projects}}
+
+  <div class="section">
+    <span class="label">Email:</span> {{email}}<br>
+    <span class="label">Phone:</span> {{phone}}
   </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <ul>
+      <li>{{skill1}}</li>
+      <li>{{skill2}}</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Projects</h2>
+    <div id="projects">
+      {{projects}} <!-- optional: you can populate this later -->
+    </div>
+  </div>
+
 </body>
 </html>
+
