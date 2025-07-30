@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio of {{name}}</title>
+  <style>
+    body { font-family: 'Courier New', monospace; background: #fef6e4; color: #001858; padding: 30px; }
+    .header { background: #f582ae; padding: 20px; border-radius: 8px; }
+    .projects { margin-top: 20px; background: #f3d2c1; padding: 15px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>{{name}}</h1>
+    <p>{{bio}}</p>
+  </div>
+  <div class="projects">
+    <h2>My Work</h2>
+    {{projects}}
+  </div>
+</body>
+</html>
