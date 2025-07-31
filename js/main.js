@@ -55,3 +55,23 @@ document.getElementById('templatePicker').addEventListener('change', function ()
 
 // Load first template on page load
 loadTemplate('template1.html');
+
+function getFormData(){
+  return{
+    name: document.getElementById('name').value,
+    bio: document.getElementById('bio').value,
+    skill1: document.getElementById('skill1').value,
+    skill2: document.getElementById('skill2').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+
+  }
+
+
+
+}
+document.getElementById('loadBtn').addEventListener('click', () => {
+  const userData = getFormData();
+  const rendered = injectUserData(window.currentTemplate, userData);
+  document.getElementById('preview').innerHTML = rendered;
+  });
