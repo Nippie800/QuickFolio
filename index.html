@@ -1,9 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio Builder</title>
+  
+  <!-- 🔧 Form Styling -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    input, select, button {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #preview {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+  </style>
 </head>
 <body>
 
@@ -17,9 +71,14 @@
     <input id="skill2" placeholder="Skill 2" required><br>
     <input id="email" type="email" placeholder="Email" required><br>
     <input id="phone" type="tel" placeholder="Phone Number" required><br>
+    <input id="projectTitle1" placeholder="Project 1 Title" required><br>
+    <input id="projectLink1" placeholder="Project 1 URL (https://...)" required><br>
+    <input id="projectTitle2" placeholder="Project 2 Title"><br>
+    <input id="projectLink2" placeholder="Project 2 URL (https://...)"><br>
 
     <button type="button" id="loadBtn">Preview Portfolio</button>
-    <button type="button" id="exportBtn">Export as HTML</button>
+    <button type="button" id="exportBtn">⬇ Export as HTML ZIP</button>
+
   </form>
 
   <hr>
@@ -41,17 +100,17 @@
   <script src="js/formHandler.js"></script>
   <script src="js/previewHandler.js"></script>
   <script src="js/exporter.js"></script>
+
   <script>
     // Handle template switching
-    document.getElementById('templatePicker').addEventListener('change', function() {
-      loadTemplate(this.value); // Call the function from your JS
+    document.getElementById('templatePicker').addEventListener('change', function () {
+      loadTemplate(this.value);
     });
 
-    // Load a default template on page load
+    // Load default template
     window.addEventListener('DOMContentLoaded', () => {
       loadTemplate('template1.html');
     });
   </script>
-
 </body>
 </html>
